@@ -113,7 +113,7 @@ export default function Register({ navigation }) {
         >
             <Text style={styles.titleText}>Dados do Usuário</Text>
             <View style={styles.inputView}>
-                <MaterialIcons name="email" size={24} color="#730000" />
+                <MaterialIcons name="email" size={24} color="#FF5733" />
                 <TextInput
                     style={styles.input}
                     value={state.email}
@@ -125,7 +125,7 @@ export default function Register({ navigation }) {
                 />
             </View>
             <View style={styles.inputView}>
-                <FontAwesome name="user" size={24} color="#730000" />
+                <FontAwesome name="user" size={24} color="#FF5733" />
                 <TextInput
                     style={styles.input}
                     value={state.name}
@@ -134,7 +134,7 @@ export default function Register({ navigation }) {
                 />
             </View>
             <View style={styles.inputView}>
-                <MaterialIcons name="phone" size={24} color="#730000" />
+                <MaterialIcons name="phone" size={24} color="#FF5733" />
                 <TextInput
                     style={styles.input}
                     value={state.phone}
@@ -144,7 +144,7 @@ export default function Register({ navigation }) {
                 />
             </View>
             <View style={styles.inputView}>
-                <FontAwesome name="lock" size={24} color="#730000" />
+                <FontAwesome name="lock" size={24} color="#FF5733" />
                 <TextInput
                     style={styles.input}
                     value={state.password}
@@ -158,14 +158,14 @@ export default function Register({ navigation }) {
                     style={styles.touchableIcon}
                     onPress={() => setPasswordSecured(!passwordSecured)}>
                     {passwordSecured ? (
-                        <FontAwesome name="eye" type="font-awesome" size={20} color='#730000' />
+                        <FontAwesome name="eye" type="font-awesome" size={20} color='#FF5733' />
                     ) : (
-                        <FontAwesome name="eye-slash" type="font-awesome" size={20} color='#730000' />
+                        <FontAwesome name="eye-slash" type="font-awesome" size={20} color='#FF5733' />
                     )}
                 </TouchableOpacity>
             </View>
             <View style={styles.inputView}>
-                <FontAwesome name="lock" size={24} color="#730000" />
+                <FontAwesome name="lock" size={24} color="#FF5733" />
                 <TextInput
                     style={styles.input}
                     value={passwordConfirm}
@@ -179,9 +179,9 @@ export default function Register({ navigation }) {
                     style={styles.touchableIcon}
                     onPress={() => setPasswordConfirmSecured(!passwordConfirmSecured)}>
                     {passwordConfirmSecured ? (
-                        <FontAwesome name="eye" type="font-awesome" size={20} color='#730000' />
+                        <FontAwesome name="eye" type="font-awesome" size={20} color='#FF5733' />
                     ) : (
-                        <FontAwesome name="eye-slash" type="font-awesome" size={20} color='#730000' />
+                        <FontAwesome name="eye-slash" type="font-awesome" size={20} color='#FF5733' />
                     )}
                 </TouchableOpacity>
             </View>
@@ -229,21 +229,21 @@ const styles = StyleSheet.create({
     titleText: {
         fontWeight: 'bold',
         fontSize: 30,
-        color: '#730000',
+        color: '#FF5733',
         marginBottom: 20,
         textAlign: 'center',
     },
     saveButton: {
         width: '50%',
         height: 40,
-        backgroundColor: '#E37D00',
+        backgroundColor: '#FF8C42',
         padding: 5,
         borderRadius: 5,
     },
     saveButtonText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#730000',
+        color: '#FF5733',
         textAlign: 'center',
     },
     input: {
@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: '#730000',
+        borderColor: '#FF5733',
         paddingHorizontal: 10,
         display: 'flex',
         flexDirection: 'row',

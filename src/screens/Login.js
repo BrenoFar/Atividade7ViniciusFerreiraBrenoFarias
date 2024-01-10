@@ -83,7 +83,7 @@ export default function Login({ navigation, route }) {
                 source={require('../../assets/car_washing.png')}
             />
             <View style={styles.inputView}>
-                <MaterialIcons name="email" size={24} color="#730000" />
+                <MaterialIcons name="email" size={24} color="#FF5733" />
                 <TextInput
                     style={styles.input}
                     value={state.email}
@@ -95,7 +95,7 @@ export default function Login({ navigation, route }) {
                 />
             </View>
             <View style={styles.inputView}>
-                <FontAwesome name="lock" size={24} color="#730000" />
+                <FontAwesome name="lock" size={24} color="#FF5733" />
                 <TextInput
                     style={styles.input}
                     value={state.password}
@@ -109,9 +109,9 @@ export default function Login({ navigation, route }) {
                     style={styles.touchableIcon}
                     onPress={() => setPasswordSecured(!passwordSecured)}>
                     {passwordSecured ? (
-                        <FontAwesome name="eye" type="font-awesome" size={20} color='#730000' />
+                        <FontAwesome name="eye" type="font-awesome" size={20} color='#FF5733' />
                     ) : (
-                        <FontAwesome name="eye-slash" type="font-awesome" size={20} color='#730000' />
+                        <FontAwesome name="eye-slash" type="font-awesome" size={20} color='#FF5733' />
                     )}
                 </TouchableOpacity>
             </View>
@@ -153,31 +153,31 @@ const styles = StyleSheet.create({
     titleText: {
         fontWeight: 'bold',
         fontSize: 40,
-        color: '#730000',
+        color: '#FF5733',
         textAlign: 'center',
         fontStyle: 'italic'
     },
     button: {
-        backgroundColor: '#E37D00',
+        backgroundColor: '#FF8C42',
         padding: 5,
         borderRadius: 5,
     },
     loginButton: {
         width: '50%',
         height: 40,
-        backgroundColor: '#E37D00',
+        backgroundColor: '#FF8C42',
         padding: 5,
         borderRadius: 5,
     },
     loginButtonText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#730000',
+        color: '#FF5733',
         textAlign: 'center',
     },
     buttonText: {
         fontWeight: 'bold',
-        color: '#730000',
+        color: '#FF5733',
         textAlign: 'center',
     },
     input: {
@@ -191,7 +191,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: '#730000',
+        borderColor: '#FF5733',
         paddingHorizontal: 10,
         display: 'flex',
         flexDirection: 'row',
@@ -201,10 +201,10 @@ const styles = StyleSheet.create({
         padding: 4,
     },
     textSimple: {
-        color: '#730000',
+        color: '#FF5733',
     },
     textSimpleJustify: {
-        color: '#730000',
+        color: '#FF5733',
         width: '95%',
         textAlign: 'justify',
     },
