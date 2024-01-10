@@ -2,8 +2,8 @@ import * as React from 'react';
 import { KeyboardAvoidingView, Platform, View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
 import { MaterialIcons, FontAwesome } from '@expo/vector-icons'; // Ícones inputs e mensagem erro
 import Separator from '../components/Separator';
-import {db, auth } from '../config/firebase';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { db, auth } from '../config/firebase';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 
 export default function Register({ navigation }) {
     const [state, setState] = React.useState({
@@ -50,7 +50,7 @@ export default function Register({ navigation }) {
                 setMessageRegisterError('Os campos "Senha" e "Confirma Senha" \nnão coincidem!');
                 setStatusRegisterError(true);
             } else {
-                createUserWithEmailAndPassword(auth,state.email, state.password)
+                createUserWithEmailAndPassword(auth, state.email, state.password)
                     .then((userCredential) => {
                         let userName = state.name,
                             userEmail = state.email;
@@ -81,11 +81,25 @@ export default function Register({ navigation }) {
                         });
                     })
                     .catch((error) => {
-                        if (error.code === 'auth/email-already-in-use')
+                        if (error.code === 'auth/email-already-in-use') {
                             setMessageRegisterError('"E-mail" (Usuário) já cadastrado!');
-                        else
+                        } else if (error.code !== undefined) {
                             setMessageRegisterError('"E-mail" e/ou "Senha" inválidos!\n(Senha com mínimo de 6 caracteres)');
-                        setStatusRegisterError(true);
+                            setStatusRegisterError(true);
+                        } else
+                            setMessageRegisterError('Sucesso! Conta criada');
+                        setStatusRegisterError(false);
+                        signInWithEmailAndPassword(auth, state.email, state.password)
+                            .then((userCredential) => {
+                                // Limpa variáveis de estado/inputs
+                                setState({ email: '', senha: '' });
+                                // Vai para a tela Home (e não volta mais para login), replace esvazia a pilha/stack
+                                navigation.replace('HomeMenuBottomTab', {
+                                    screen: 'Home',
+                                    params: { uid: userCredential.user.uid, name: userCredential.user.displayName, email: userCredential.user.email }
+                                });
+                            })
+
                         //console.log(error.code);
                         //console.log(error.message);
                     });
@@ -176,6 +190,19 @@ export default function Register({ navigation }) {
                 <View style={styles.contentAlert}>
                     <MaterialIcons
                         name='mood-bad'
+                        size={24}
+                        color='black'
+                    />
+                    <Text style={styles.warningAlert}>{messageRegisterError}</Text>
+                </View>
+                :
+                <View></View>
+            }
+            {statusRegisterError === false
+                ?
+                <View style={styles.contentAlert}>
+                    <MaterialIcons
+                        name='mood'
                         size={24}
                         color='black'
                     />
