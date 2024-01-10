@@ -20,7 +20,7 @@ export default function Home({ route }) {
                 <FontAwesome5
                     name='smile-wink'
                     size={24}
-                    color='#730000'
+                    color='#FF5733'
                 />
             </View>
         </View>
@@ -37,31 +37,31 @@ const styles = StyleSheet.create({
     titleText: {
         fontWeight: 'bold',
         fontSize: 40,
-        color: '#730000',
+        color: '#FF5733',
         textAlign: 'center',
         fontStyle: 'italic'
     },
     button: {
-        backgroundColor: '#E37D00',
+        backgroundColor: '#FF8C42',
         padding: 5,
         borderRadius: 5,
     },
     loginButton: {
         width: '50%',
         height: 40,
-        backgroundColor: '#E37D00',
+        backgroundColor: '#FF8C42',
         padding: 5,
         borderRadius: 5,
     },
     loginButtonText: {
         fontSize: 20,
         fontWeight: 'bold',
-        color: '#730000',
+        color: '#FF5733',
         textAlign: 'center',
     },
     buttonText: {
         fontWeight: 'bold',
-        color: '#730000',
+        color: '#FF5733',
         textAlign: 'center',
     },
     input: {
@@ -75,7 +75,7 @@ const styles = StyleSheet.create({
         height: 50,
         borderRadius: 8,
         borderWidth: 1,
-        borderColor: '#730000',
+        borderColor: '#FF5733',
         paddingHorizontal: 10,
         display: 'flex',
         flexDirection: 'row',
@@ -85,10 +85,10 @@ const styles = StyleSheet.create({
         padding: 4,
     },
     textSimple: {
-        color: '#730000',
+        color: '#FF5733',
     },
     textSimpleJustify: {
-        color: '#730000',
+        color: '#FF5733',
         width: '95%',
         textAlign: 'justify',
     },
